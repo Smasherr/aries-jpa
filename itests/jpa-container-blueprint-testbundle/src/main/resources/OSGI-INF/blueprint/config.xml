@@ -117,7 +117,7 @@
 
     <bean id="carServiceRequiresNew"
         class="org.apache.aries.jpa.container.itest.bundle.blueprint.impl.CarServiceWithRequiresNew">
-        <tx:transaction method="*" value="Required" />
+        <property name="bundleContext" ref="blueprintBundleContext"/>
     </bean>
 
     <bean id="carLifeCycle" class="org.apache.aries.jpa.container.itest.bundle.blueprint.impl.CarLifeCycle" >
