@@ -125,6 +125,12 @@ public class BlueprintTest extends AbstractCarJPAITest {
         assertNoCars(carService);
     }
 
+    @Test
+    public void testCarWithRequiresNewAnnotation() throws Exception {
+        CarService cs = getCarService("rn");
+        cs.getCars();
+    }
+
     private CarService getCarService(String type) {
         return getService(CarService.class, "(type=" + type + ")");
     }
