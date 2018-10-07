@@ -33,6 +33,11 @@
     <name>Apache Aries JPA iTests</name>
 
     <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.jpa</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <!-- JPA API dependencies -->
         <dependency>
             <groupId>org.apache.aries.jpa.javax.persistence</groupId>
@@ -279,6 +284,12 @@
         <dependency>
             <groupId>org.apache.aries.jpa.itest</groupId>
             <artifactId>org.apache.aries.jpa.container.itest.bundle.blueprint</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.aries.jpa.itest</groupId>
+            <artifactId>org.apache.aries.jpa.container.itest.bundle.blueprint2</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>

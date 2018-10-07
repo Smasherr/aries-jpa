@@ -133,6 +133,14 @@ public class BlueprintTest extends AbstractCarJPAITest {
         cs.getCars();
     }
 
+    @Test
+    public void testCarServiceUsingOtherService() throws Exception {
+        CarService cs = getCarService("uos");
+        Car car = new Car();
+        car.setNumberPlate("TR123");
+        cs.addCar(car);
+    }
+
     private CarService getCarService(String type) {
         return getService(CarService.class, "(type=" + type + ")");
     }
@@ -176,7 +184,7 @@ public class BlueprintTest extends AbstractCarJPAITest {
             hibernate(), //
             derbyDSF(), //
             testBundle(), //
-            testBundleBlueprint(),
+            testBundleBlueprints(),
         // debug()
         };
     }

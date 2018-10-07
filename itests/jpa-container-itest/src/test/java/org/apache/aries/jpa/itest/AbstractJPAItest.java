@@ -323,8 +323,11 @@ public abstract class AbstractJPAItest {
         return mvnBundle("org.apache.aries.jpa", "org.apache.aries.jpa.container.itest.bundle");
     }
 
-    protected Option testBundleBlueprint() {
-        return mvnBundle("org.apache.aries.jpa.itest", "org.apache.aries.jpa.container.itest.bundle.blueprint");
+    protected Option testBundleBlueprints() {
+        return composite(
+                mvnBundle("org.apache.aries.jpa.itest", "org.apache.aries.jpa.container.itest.bundle.blueprint"),
+                mvnBundle("org.apache.aries.jpa.itest", "org.apache.aries.jpa.container.itest.bundle.blueprint2")
+        );
     }
 
     protected MavenArtifactProvisionOption testBundleEclipseLink() {
